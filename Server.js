@@ -7,24 +7,24 @@ const app = express();
 
 
 connectDB();
- app.use(cors({
-   origin:function(origin,callback){
-     return callback(null,true)
-   }
- }));
+//  app.use(cors({
+//    origin:function(origin,callback){
+//      return callback(null,true)
+//    }
+//  }));
 // const corsoption = {
 //   origin:true,
 //   Credentials:true
 // }
 // app.use(cors(corsoption))
 
-app.use(express.json({ extended: false }));
+// app.use(express.json({ extended: false }));
 // app.use(cors());
-// app.use(cors({
-//   origin: ['tour-wheat-pi.vercel.app'],  
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   credentials: true
-// }));
+app.use(cors({
+  origin: ['tourapp-gamma.vercel.app'],  
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 
 app.use('/api/auth', require('./routes/auth'));
